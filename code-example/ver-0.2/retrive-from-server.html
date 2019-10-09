@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>irouter code example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="../../lib/ver-0.2/irouter.min.js"></script>
+   </head>
+   <body>
+      <div style = "width:100%">
+		
+         <div style = "background-color:#b5dcb3; width:100%">
+            <h1>irouter live code example</h1>
+         </div>		
+         <div class="nav">
+            <a href="#!home">HOME</a><br /><br />
+            <a href="#!html">retrive every time form server</a><br /><br />
+            <a href="#!javascript">Cached content</a><br /><br />
+            <a href="#!php">Custom Loading screen</a><br/><br />
+            <a href="#!my-favorite-one">Insert into child</a>
+         </div>
+			
+         <div class="container" >
+             <div id="home" class="ipage ipage-default">
+                <h2>All the contents are copied from Wikipedia, some links may not be working, containers may not looking cool as they should</h2>
+             </div> 
+             <div id="html" class="ipage" irouter='{"get":"component/about-html.html","cache":"false"}'>   
+             </div>
+             <div id="javascript" class="ipage" irouter='{"get":"component/about-javascript.html"}'>            
+             </div>
+             <div id="php" class="ipage" irouter='{"get":"component/about-php.html","loading-screen":"loading-screen"}'>            
+             </div>
+             <div id="my-favorite-one" class="ipage" irouter='{"get":"component/my-fav-lang.text","insert-into":"favorite-language-span"}'>            
+                 <p>
+                     <u><b><span id="favorite-language-span"></span></b></u> is my favorite language
+                     <br><br><br><br>response in inserted into span<pre><code >&lt;p&gt;&lt;u&gt;&lt;span id="favorite-language-span"&gt;javascript&lt;/span&gt;&lt;/u&gt; is my favorite language&lt;/p&gt;
+                     </code></pre>
+                 </p>
+             </div>
+         </div>
+      </div>
+      <div id="loading-screen" class="iloading-screen"><div class="loader"></div></div>
+   </body>
+<style>
+@media only screen and (min-width: 900px) {
+  .nav{background-color:#aaa;height: 100vh; width:10%; float:left;text-align:center}
+  .container{background-color:#eee; min-height:200px; width:80%;padding:10px; float:left;}
+}
+@media only screen and (max-width: 900px) {
+  .nav{background-color:#aaa; width:100%; float:left;text-align:center}
+  .container{background-color:#eee; min-height:200px; width:100%;padding:10px; float:left;}
+}
+.loader { border: 5px solid white; border-radius: 50%; border-top: 5px solid black; width: 50px; height: 50px; -webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite; } @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } } @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } 
+.loader{position:relative;left:50%;transform: translate(-50%, -50%);}
+div{margin:0px;}
+.ipage{overflow: scroll;width:100%}
+</style>
+</html>
