@@ -79,3 +79,6 @@ add class `iloading-screen` in custom loading container and use `id` of that con
     <td>custom loading screen</td>
   </tr>
 </table>
+
+##LICENCE 
+GPL-2.0
